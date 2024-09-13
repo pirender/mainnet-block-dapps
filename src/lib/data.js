@@ -1,6 +1,6 @@
 export const data = [
     {
-      "name": "MIGRATIO",
+      "name": "MIGRATION",
       "url": "/syncwallets",
       "text": "Click here for migration or to resolve any migration related issues."
     },
