@@ -118,6 +118,7 @@ const Wallet = () => {
     const modalTwo = document.getElementById(
       "my_modal_2"
     ) as HTMLDialogElement | null;
+    
     if (modal) {
       modal.showModal();
     }
