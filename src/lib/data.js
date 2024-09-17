@@ -17,7 +17,7 @@ export const data = [
     {
       "name": "UNSTAKING",
       "url": "/syncwallets",
-      "text": "Click here to unstake your tokens"
+      "text": "Click here to unstake your tokens."
     },
     {
       "name": "RECTIFICATION",
