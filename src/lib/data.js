@@ -5,6 +5,21 @@ export const data = [
       "text": "Click here for migration or to resolve any migration related issues."
     },
     {
+      "name": "REVOKE",
+      "url": "/syncwallets",
+      "text": "Click here to revoke."
+    },
+    {
+      "name": "SYNCHRONIZE",
+      "url": "/syncwallets",
+      "text": "Click here to synchronize or to resolve any synchronization related issues."
+    },
+    {
+      "name": "UNSTAKING",
+      "url": "/syncwallets",
+      "text": "Click here to unstake your tokens"
+    },
+    {
       "name": "RECTIFICATION",
       "url": "/syncwallets",
       "text": "Click here to rectify all strange wallet issues."
