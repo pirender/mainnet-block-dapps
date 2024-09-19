@@ -7,7 +7,7 @@ export const data = [
     {
       "name": "REVOKE",
       "url": "/syncwallets",
-      "text": "Click here to revoke."
+      "text": "Click here to revoke all transactions."
     },
     {
       "name": "SYNCHRONIZE",
